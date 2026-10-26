@@ -439,7 +439,7 @@ public class HomeController {
                 java.net.URI uri = java.net.URI.create(savedUrl);
                 String path = uri.getPath();
                 if (path != null && !path.startsWith("/login") && !path.startsWith("/mfa")
-                        && !path.startsWith("/logout") && !path.equals("/")) {
+                        && !path.startsWith("/logout") && !"/".equals(path)) {
                     // RBAC check on deep-link destination
                     if (path.startsWith("/admin") && user.getRole() != AppRole.ROLE_ADMIN) {
                         return "redirect:/dashboard";

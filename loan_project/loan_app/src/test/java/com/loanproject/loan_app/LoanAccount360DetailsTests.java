@@ -442,8 +442,8 @@ public class LoanAccount360DetailsTests {
 
         assertTrue(maskedPhone.contains("XXXX") || maskedPhone.contains("*"));
         assertTrue(maskedEmail.contains("****") || maskedEmail.contains("*"));
-        assertFalse(maskedPhone.equals("9876501234"));
-        assertFalse(maskedEmail.equals("rajesh.kumar@example.com"));
+        assertFalse("9876501234".equals(maskedPhone));
+        assertFalse("rajesh.kumar@example.com".equals(maskedEmail));
     }
 
     @Test
